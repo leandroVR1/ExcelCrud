@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "bd6WCF6NYQoHf15mndsHuJ/lII/957Nx6yI0vXYb9ZjsipNmUWgkjPva6ZQNWQg42gWNU4ryzfwSPlzvurdi1A==",
+  "dgSpecHash": "7TMAc44ZlUeQZIZF+SRnit8Tr1Jao4axx6RQt2/qLyIVg9WG35/gPgZH7yAu5GFxA5VEN9y7z3rSTStvNqLLVw==",
   "success": true,
   "projectFilePath": "/home/riwip5-047/Documents/leo/ExcelCrudMVC/ExcelCrudMVC.csproj",
   "expectedPackageFiles": [
+    "/home/riwip5-047/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
+    "/home/riwip5-047/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/home/riwip5-047/.nuget/packages/epplus/6.0.8/epplus.6.0.8.nupkg.sha512",
     "/home/riwip5-047/.nuget/packages/epplus.interfaces/6.0.0/epplus.interfaces.6.0.0.nupkg.sha512",
     "/home/riwip5-047/.nuget/packages/epplus.system.drawing/6.0.0/epplus.system.drawing.6.0.0.nupkg.sha512",
+    "/home/riwip5-047/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/riwip5-047/.nuget/packages/microsoft.entityframeworkcore/8.0.7/microsoft.entityframeworkcore.8.0.7.nupkg.sha512",
     "/home/riwip5-047/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.7/microsoft.entityframeworkcore.abstractions.8.0.7.nupkg.sha512",
     "/home/riwip5-047/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.7/microsoft.entityframeworkcore.analyzers.8.0.7.nupkg.sha512",

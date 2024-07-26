@@ -1,0 +1,36 @@
+@model IEnumerable<ExcelCrudMVC.ViewModels.EstudianteViewModel>
+
+@section Styles {
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <h2>Lista de Estudiantes</h2>
+    <a class="btn btn-primary" asp-action="Create">Crear Nuevo</a>
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Correo</td>
+                    <td>@item.Telefono</td>
+                    <td>
+                        <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.EstudianteID">Editar</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.EstudianteID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,46 @@
+@model ExcelCrudMVC.ViewModels.EstudianteViewModel
+
+@section Styles {
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <h2>Eliminar Estudiante</h2>
+    <h3>¿Está seguro que desea eliminar este estudiante?</h3>
+    <div>
+        <h4>Estudiante</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Nombre
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Nombre
+            </dd>
+            <dt class="col-sm-2">
+                Apellido
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Apellido
+            </dd>
+            <dt class="col-sm-2">
+                Correo
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Correo
+            </dd>
+            <dt class="col-sm-2">
+                Teléfono
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Telefono
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="EstudianteID" />
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>

@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using ExcelCrudMVC.Data;
 using ExcelCrudMVC.Controllers;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
+using ExcelCrudMVC.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
     new MySqlServerVersion(new Version(8, 0, 20))));
+
+// Configurar AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 

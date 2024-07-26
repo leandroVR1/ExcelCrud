@@ -44,3 +44,6 @@
 /home/riwip5-047/Documents/leo/ExcelCrudMVC/obj/Debug/net8.0/ExcelCrudMVC.pdb
 /home/riwip5-047/Documents/leo/ExcelCrudMVC/obj/Debug/net8.0/ExcelCrudMVC.genruntimeconfig.cache
 /home/riwip5-047/Documents/leo/ExcelCrudMVC/obj/Debug/net8.0/ref/ExcelCrudMVC.dll
+/home/riwip5-047/Documents/leo/ExcelCrudMVC/obj/Debug/net8.0/ExcelCrudMVC.sourcelink.json
+/home/riwip5-047/Documents/leo/ExcelCrudMVC/bin/Debug/net8.0/AutoMapper.dll
+/home/riwip5-047/Documents/leo/ExcelCrudMVC/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

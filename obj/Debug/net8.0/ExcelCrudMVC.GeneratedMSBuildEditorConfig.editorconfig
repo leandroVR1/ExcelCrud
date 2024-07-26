@@ -18,6 +18,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/riwip5-047/Documents/leo/ExcelCrudMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/riwip5-047/Documents/leo/ExcelCrudMVC/Views/Estudiantes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/riwip5-047/Documents/leo/ExcelCrudMVC/Views/Estudiantes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/riwip5-047/Documents/leo/ExcelCrudMVC/Views/Estudiantes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/riwip5-047/Documents/leo/ExcelCrudMVC/Views/Estudiantes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/riwip5-047/Documents/leo/ExcelCrudMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

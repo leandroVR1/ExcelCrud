@@ -1,0 +1,35 @@
+@model ExcelCrudMVC.ViewModels.InscripcionViewModel
+
+<div class="container">
+    <h2>Eliminar Inscripción</h2>
+    <h3>¿Estás seguro de que quieres eliminar esta inscripción?</h3>
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">ID</dt>
+            <dd class="col-sm-10">@Model.InscripcionID</dd>
+            <dt class="col-sm-2">Estudiante</dt>
+            <dd class="col-sm-10">@Model.EstudianteID</dd>
+            <dt class="col-sm-2">Materia</dt>
+            <dd class="col-sm-10">@Model.MateriaID</dd>
+            <dt class="col-sm-2">Profesor</dt>
+            <dd class="col-sm-10">@Model.ProfesorID</dd>
+            <dt class="col-sm-2">Decano</dt>
+            <dd class="col-sm-10">@Model.DecanoID</dd>
+            <dt class="col-sm-2">Universidad</dt>
+            <dd class="col-sm-10">@Model.UniversidadID</dd>
+            <dt class="col-sm-2">Carrera</dt>
+            <dd class="col-sm-10">@Model.CarreraID</dd>
+            <dt class="col-sm-2">Semestre</dt>
+            <dd class="col-sm-10">@Model.Semestre</dd>
+            <dt class="col-sm-2">Año</dt>
+            <dd class="col-sm-10">@Model.Año</dd>
+            <dt class="col-sm-2">Estado</dt>
+            <dd class="col-sm-10">@Model.EstadoDeInscripcion</dd>
+        </dl>
+    </div>
+    <form asp-action="DeleteConfirmed" method="post" class="mt-3">
+        <input type="hidden" asp-for="InscripcionID" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

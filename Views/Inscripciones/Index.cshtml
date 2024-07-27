@@ -1,0 +1,44 @@
+@model IEnumerable<ExcelCrudMVC.ViewModels.InscripcionViewModel>
+
+<div class="container">
+    <h2>Lista de Inscripciones</h2>
+    <a asp-action="Create" class="btn btn-primary">Crear Nueva Inscripción</a>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Estudiante</th>
+                <th>Materia</th>
+                <th>Profesor</th>
+                <th>Decano</th>
+                <th>Universidad</th>
+                <th>Carrera</th>
+                <th>Semestre</th>
+                <th>Año</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.InscripcionID</td>
+                    <td>@item.EstudianteID</td>
+                    <td>@item.MateriaID</td>
+                    <td>@item.ProfesorID</td>
+                    <td>@item.DecanoID</td>
+                    <td>@item.UniversidadID</td>
+                    <td>@item.CarreraID</td>
+                    <td>@item.Semestre</td>
+                    <td>@item.Año</td>
+                    <td>@item.EstadoDeInscripcion</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.InscripcionID" class="btn btn-warning">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.InscripcionID" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -46,53 +46,54 @@ public class EstudiantesController : Controller
     }
 
     public async Task<IActionResult> Edit(int? id)
+{
+    if (id == null)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var estudiante = await _context.Estudiantes.FindAsync(id);
-        if (estudiante == null)
-        {
-            return NotFound();
-        }
-        var estudianteViewModel = _mapper.Map<EstudianteViewModel>(estudiante);
-        return View(estudianteViewModel);
+        return NotFound();
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, EstudianteViewModel estudianteViewModel)
+    var estudiante = await _context.Estudiantes.FindAsync(id);
+    if (estudiante == null)
     {
-        if (id != estudianteViewModel.EstudianteID)
-        {
-            return NotFound();
-        }
-
-        if (ModelState.IsValid)
-        {
-            try
-            {
-                var estudiante = _mapper.Map<Estudiante>(estudianteViewModel);
-                _context.Update(estudiante);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EstudianteExists(estudianteViewModel.EstudianteID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return RedirectToAction(nameof(Index));
-        }
-        return View(estudianteViewModel);
+        return NotFound();
     }
+    var estudianteViewModel = _mapper.Map<EstudianteViewModel>(estudiante);
+    return View(estudianteViewModel);
+}
+
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, EstudianteViewModel estudianteViewModel)
+{
+    if (id != estudianteViewModel.EstudianteID)
+    {
+        return NotFound();
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            var estudiante = _mapper.Map<Estudiante>(estudianteViewModel);
+            _context.Update(estudiante);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!EstudianteExists(estudianteViewModel.EstudianteID))
+            {
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
+        }
+        return RedirectToAction(nameof(Index));
+    }
+    return View(estudianteViewModel);
+}
+
 
     public async Task<IActionResult> Delete(int? id)
     {

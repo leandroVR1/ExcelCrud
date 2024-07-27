@@ -9,6 +9,7 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<Estudiante, EstudianteViewModel>().ReverseMap();
+        CreateMap<Inscripcion, InscripcionViewModel>().ReverseMap();
     }
 }
 }

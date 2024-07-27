@@ -20,3 +20,54 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Custom styles for sidebar */
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #343a40;
+  color: #fff;
+  padding-top: 20px;
+  overflow-y: auto;
+  transition: width 0.3s;
+}
+.sidebar a {
+  color: #adb5bd;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: #fff;
+  background-color: #495057;
+  border-radius: 4px;
+}
+.sidebar .nav-link {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .nav-link i {
+  margin-right: 10px;
+}
+.sidebar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+  .content {
+      margin-left: 0;
+  }
+}

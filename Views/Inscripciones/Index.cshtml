@@ -1,10 +1,9 @@
 @model IEnumerable<ExcelCrudMVC.ViewModels.InscripcionViewModel>
 
-<div class="container">
+<div class="container mt-5">
     <h2>Lista de Inscripciones</h2>
-    <a asp-action="Create" class="btn btn-primary">Crear Nueva Inscripción</a>
-    <table class="table mt-3">
-        <thead>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
             <tr>
                 <th>ID</th>
                 <th>Estudiante</th>
@@ -24,17 +23,18 @@
             {
                 <tr>
                     <td>@item.InscripcionID</td>
-                    <td>@item.EstudianteID</td>
-                    <td>@item.MateriaID</td>
-                    <td>@item.ProfesorID</td>
-                    <td>@item.DecanoID</td>
-                    <td>@item.UniversidadID</td>
-                    <td>@item.CarreraID</td>
+                    <td>@item.EstudianteNombre</td>
+                    <td>@item.MateriaNombre</td>
+                    <td>@item.ProfesorNombre</td>
+                    <td>@item.DecanoNombre</td>
+                    <td>@item.UniversidadNombre</td>
+                    <td>@item.CarreraNombre</td>
                     <td>@item.Semestre</td>
                     <td>@item.Año</td>
                     <td>@item.EstadoDeInscripcion</td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.InscripcionID" class="btn btn-warning">Editar</a>
+                        <a asp-action="Edit" asp-route-id="@item.InscripcionID" class="btn btn-primary">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.InscripcionID" class="btn btn-info">Detalles</a>
                         <a asp-action="Delete" asp-route-id="@item.InscripcionID" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>

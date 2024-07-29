@@ -5,7 +5,9 @@ using ExcelCrudMVC.Models;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
+[Authorize(Policy = "AdminPolicy")]
 public class ExportController : Controller
 {
   private readonly ApplicationDbContext _context;

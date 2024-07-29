@@ -6,7 +6,9 @@ using ExcelCrudMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
+[Authorize(Policy = "AdminPolicy")]
 public class InscripcionesController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -18,12 +20,21 @@ public class InscripcionesController : Controller
         _mapper = mapper;
     }
 
-    public async Task<IActionResult> Index()
-    {
-        var inscripciones = await _context.Inscripciones.ToListAsync();
-        var inscripcionViewModels = _mapper.Map<List<InscripcionViewModel>>(inscripciones);
-        return View(inscripcionViewModels);
-    }
+   public async Task<IActionResult> Index()
+{
+    var inscripciones = await _context.Inscripciones
+        .Include(i => i.Estudiante)
+        .Include(i => i.Materia)
+        .Include(i => i.Profesor)
+        .Include(i => i.Decano)
+        .Include(i => i.Universidad)
+        .Include(i => i.Carrera)
+        .ToListAsync();
+    
+    var inscripcionViewModels = _mapper.Map<List<InscripcionViewModel>>(inscripciones);
+    return View(inscripcionViewModels);
+}
+
 
     public IActionResult Create()
     {

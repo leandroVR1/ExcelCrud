@@ -18,7 +18,7 @@ public class InscripcionesController : Controller
         _mapper = mapper;
     }
 
-    public async Task<IActionResult> Index()
+   public async Task<IActionResult> Index()
 {
     var inscripciones = await _context.Inscripciones
         .Include(i => i.Estudiante)
@@ -27,30 +27,24 @@ public class InscripcionesController : Controller
         .Include(i => i.Decano)
         .Include(i => i.Universidad)
         .Include(i => i.Carrera)
+        .Select(i => new InscripcionListViewModel
+        {
+            InscripcionID = i.InscripcionID,
+            EstudianteNombre = i.Estudiante.Nombre,
+            MateriaNombre = i.Materia.Nombre,
+            ProfesorNombre = i.Profesor.Nombre,
+            DecanoNombre = i.Decano.Nombre,
+            UniversidadNombre = i.Universidad.Nombre,
+            CarreraNombre = i.Carrera.Nombre,
+            Semestre = i.Semestre,
+            Año = i.Año,
+            EstadoDeInscripcion = i.EstadoDeInscripcion
+        })
         .ToListAsync();
 
-    var inscripcionViewModels = inscripciones.Select(i => new InscripcionViewModel
-    {
-        InscripcionID = i.InscripcionID,
-        EstudianteID = i.EstudianteID,
-        EstudianteNombre = i.Estudiante.Nombre,
-        MateriaID = i.MateriaID,
-        MateriaNombre = i.Materia.Nombre,
-        ProfesorID = i.ProfesorID,
-        ProfesorNombre = i.Profesor.Nombre,
-        DecanoID = i.DecanoID,
-        DecanoNombre = i.Decano.Nombre,
-        UniversidadID = i.UniversidadID,
-        UniversidadNombre = i.Universidad.Nombre,
-        CarreraID = i.CarreraID,
-        CarreraNombre = i.Carrera.Nombre,
-        Semestre = i.Semestre,
-        Año = i.Año,
-        EstadoDeInscripcion = i.EstadoDeInscripcion
-    }).ToList();
-
-    return View(inscripcionViewModels);
+    return View(inscripciones);
 }
+
 
 
     public async Task<IActionResult> Create()

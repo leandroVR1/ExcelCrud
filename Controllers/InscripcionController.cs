@@ -86,71 +86,133 @@ public class InscripcionesController : Controller
     }
 
     public async Task<IActionResult> Edit(int? id)
+{
+    if (id == null)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var inscripcion = await _context.Inscripciones.FindAsync(id);
-        if (inscripcion == null)
-        {
-            return NotFound();
-        }
-        var inscripcionViewModel = _mapper.Map<InscripcionViewModel>(inscripcion);
-        return View(inscripcionViewModel);
+        return NotFound();
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, InscripcionViewModel inscripcionViewModel)
-    {
-        if (id != inscripcionViewModel.InscripcionID)
-        {
-            return NotFound();
-        }
+    var inscripcion = await _context.Inscripciones
+        .Include(i => i.Estudiante)
+        .Include(i => i.Materia)
+        .Include(i => i.Profesor)
+        .Include(i => i.Decano)
+        .Include(i => i.Universidad)
+        .Include(i => i.Carrera)
+        .FirstOrDefaultAsync(i => i.InscripcionID == id);
 
-        if (ModelState.IsValid)
+    if (inscripcion == null)
+    {
+        return NotFound();
+    }
+
+    var viewModel = new InscripcionViewModel
+    {
+        InscripcionID = inscripcion.InscripcionID,
+        EstudianteID = inscripcion.EstudianteID,
+        MateriaID = inscripcion.MateriaID,
+        ProfesorID = inscripcion.ProfesorID,
+        DecanoID = inscripcion.DecanoID,
+        UniversidadID = inscripcion.UniversidadID,
+        CarreraID = inscripcion.CarreraID,
+        Semestre = inscripcion.Semestre,
+        Año = inscripcion.Año,
+        EstadoDeInscripcion = inscripcion.EstadoDeInscripcion,
+
+        Estudiantes = await _context.Estudiantes.ToListAsync(),
+        Materias = await _context.Materias.ToListAsync(),
+        Profesores = await _context.Profesores.ToListAsync(),
+        Decanos = await _context.Decanos.ToListAsync(),
+        Universidades = await _context.Universidades.ToListAsync(),
+        Carreras = await _context.Carreras.ToListAsync()
+    };
+
+    return View(viewModel);
+}
+
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, InscripcionViewModel inscripcionViewModel)
+{
+    if (id != inscripcionViewModel.InscripcionID)
+    {
+        return NotFound();
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
         {
-            try
+            var inscripcion = _mapper.Map<Inscripcion>(inscripcionViewModel);
+            _context.Update(inscripcion);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!InscripcionExists(inscripcionViewModel.InscripcionID))
             {
-                var inscripcion = _mapper.Map<Inscripcion>(inscripcionViewModel);
-                _context.Update(inscripcion);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
-            catch (DbUpdateConcurrencyException)
+            else
             {
-                if (!InscripcionExists(inscripcionViewModel.InscripcionID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
-            return RedirectToAction(nameof(Index));
         }
-        return View(inscripcionViewModel);
+        return RedirectToAction(nameof(Index));
     }
 
-    public async Task<IActionResult> Delete(int? id)
+    // Reload the lists in case of invalid model state
+    inscripcionViewModel.Estudiantes = await _context.Estudiantes.ToListAsync();
+    inscripcionViewModel.Materias = await _context.Materias.ToListAsync();
+    inscripcionViewModel.Profesores = await _context.Profesores.ToListAsync();
+    inscripcionViewModel.Decanos = await _context.Decanos.ToListAsync();
+    inscripcionViewModel.Universidades = await _context.Universidades.ToListAsync();
+    inscripcionViewModel.Carreras = await _context.Carreras.ToListAsync();
+
+    return View(inscripcionViewModel);
+}
+
+    
+   public async Task<IActionResult> Delete(int? id)
+{
+    if (id == null)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var inscripcion = await _context.Inscripciones
-            .FirstOrDefaultAsync(m => m.InscripcionID == id);
-        if (inscripcion == null)
-        {
-            return NotFound();
-        }
-
-        var inscripcionViewModel = _mapper.Map<InscripcionViewModel>(inscripcion);
-        return View(inscripcionViewModel);
+        return NotFound();
     }
+
+    var inscripcion = await _context.Inscripciones
+        .Include(i => i.Estudiante)
+        .Include(i => i.Materia)
+        .Include(i => i.Profesor)
+        .Include(i => i.Decano)
+        .Include(i => i.Universidad)
+        .Include(i => i.Carrera)
+        .FirstOrDefaultAsync(m => m.InscripcionID == id);
+    
+    if (inscripcion == null)
+    {
+        return NotFound();
+    }
+
+    var viewModel = new InscripcionListViewModel
+    {
+        InscripcionID = inscripcion.InscripcionID,
+        EstudianteNombre = inscripcion.Estudiante.Nombre,
+        MateriaNombre = inscripcion.Materia.Nombre,
+        ProfesorNombre = inscripcion.Profesor.Nombre,
+        DecanoNombre = inscripcion.Decano.Nombre,
+        UniversidadNombre = inscripcion.Universidad.Nombre,
+        CarreraNombre = inscripcion.Carrera.Nombre,
+        Semestre = inscripcion.Semestre,
+        Año = inscripcion.Año,
+        EstadoDeInscripcion = inscripcion.EstadoDeInscripcion
+    };
+
+    return View(viewModel);
+}
+
+
+
 
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]

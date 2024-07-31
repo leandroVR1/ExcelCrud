@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExcelCrudMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b35f8e5c1122688971d0285fd6de324c56b2ce3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0873fa3f6036e45d074c8ebec4f988ff51415a3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExcelCrudMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExcelCrudMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

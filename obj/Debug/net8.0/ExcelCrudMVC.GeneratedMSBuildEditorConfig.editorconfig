@@ -50,8 +50,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Editar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9FZGl0YXIuY3NodG1s
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Index.cshtml]

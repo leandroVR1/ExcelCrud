@@ -27,7 +27,7 @@
             <dd class="col-sm-10">@Model.EstadoDeInscripcion</dd>
         </dl>
     </div>
-    <form asp-action="DeleteConfirmed" method="post" class="mt-3">
+    <form asp-action="Delete" method="post" class="mt-3">
         <input type="hidden" asp-for="InscripcionID" />
         <button type="submit" class="btn btn-danger">Eliminar</button>
         <a asp-action="Index" class="btn btn-secondary">Cancelar</a>

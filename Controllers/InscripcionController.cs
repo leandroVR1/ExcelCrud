@@ -25,12 +25,22 @@ public class InscripcionesController : Controller
         return View(inscripcionViewModels);
     }
 
-    public IActionResult Create()
+    public async Task<IActionResult> Create()
     {
-        return View();
+        var viewModel = new InscripcionViewModel
+        {
+            Estudiantes = await _context.Estudiantes.ToListAsync(),
+            Materias = await _context.Materias.ToListAsync(),
+            Profesores = await _context.Profesores.ToListAsync(),
+            Decanos = await _context.Decanos.ToListAsync(),
+            Universidades = await _context.Universidades.ToListAsync(),
+            Carreras = await _context.Carreras.ToListAsync()
+        };
+
+        return View(viewModel);
     }
 
-    [HttpPost]
+      [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(InscripcionViewModel inscripcionViewModel)
     {
@@ -41,6 +51,15 @@ public class InscripcionesController : Controller
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        // If model state is not valid, reload the lists to avoid null references in the view
+        inscripcionViewModel.Estudiantes = await _context.Estudiantes.ToListAsync();
+        inscripcionViewModel.Materias = await _context.Materias.ToListAsync();
+        inscripcionViewModel.Profesores = await _context.Profesores.ToListAsync();
+        inscripcionViewModel.Decanos = await _context.Decanos.ToListAsync();
+        inscripcionViewModel.Universidades = await _context.Universidades.ToListAsync();
+        inscripcionViewModel.Carreras = await _context.Carreras.ToListAsync();
+
         return View(inscripcionViewModel);
     }
 

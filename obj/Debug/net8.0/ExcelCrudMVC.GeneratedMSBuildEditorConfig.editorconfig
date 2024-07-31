@@ -9,71 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ExcelCrudMVC
 build_property.RootNamespace = ExcelCrudMVC
-build_property.ProjectDir = /workspaces/ExcelCrud/
+build_property.ProjectDir = /home/riwip5-031/Documents/leo/ExcelCrud/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /workspaces/ExcelCrud
+build_property.MSBuildProjectDirectory = /home/riwip5-031/Documents/leo/ExcelCrud
 build_property._RazorSourceGeneratorDebug = 
 
-[/workspaces/ExcelCrud/Views/Estudiantes/Create.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Estudiantes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Estudiantes/Delete.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Estudiantes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Estudiantes/Edit.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Estudiantes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Estudiantes/Index.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Estudiantes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXN0dWRpYW50ZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Home/Index.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Home/Privacy.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Inscripciones/Create.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Inscripciones/Delete.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Inscripciones/Editar.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9FZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Inscripciones/Index.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Inscripciones/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zY3JpcGNpb25lcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Shared/Error.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/_ViewImports.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/_ViewStart.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/ExcelCrud/Views/Shared/_Layout.cshtml]
+[/home/riwip5-031/Documents/leo/ExcelCrud/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-15lryupfp2

@@ -1642,19 +1642,19 @@
     ]
   },
   "packageFolders": {
-    "/home/codespace/.nuget/packages/": {}
+    "/home/riwip5-031/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/ExcelCrud/ExcelCrudMVC.csproj",
+      "projectUniqueName": "/home/riwip5-031/Documents/leo/ExcelCrud/ExcelCrudMVC.csproj",
       "projectName": "ExcelCrudMVC",
-      "projectPath": "/workspaces/ExcelCrud/ExcelCrudMVC.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/ExcelCrud/obj/",
+      "projectPath": "/home/riwip5-031/Documents/leo/ExcelCrud/ExcelCrudMVC.csproj",
+      "packagesPath": "/home/riwip5-031/.nuget/packages/",
+      "outputPath": "/home/riwip5-031/Documents/leo/ExcelCrud/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
+        "/home/riwip5-031/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1672,11 +1672,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1719,7 +1714,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

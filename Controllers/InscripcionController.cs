@@ -19,11 +19,39 @@ public class InscripcionesController : Controller
     }
 
     public async Task<IActionResult> Index()
+{
+    var inscripciones = await _context.Inscripciones
+        .Include(i => i.Estudiante)
+        .Include(i => i.Materia)
+        .Include(i => i.Profesor)
+        .Include(i => i.Decano)
+        .Include(i => i.Universidad)
+        .Include(i => i.Carrera)
+        .ToListAsync();
+
+    var inscripcionViewModels = inscripciones.Select(i => new InscripcionViewModel
     {
-        var inscripciones = await _context.Inscripciones.ToListAsync();
-        var inscripcionViewModels = _mapper.Map<List<InscripcionViewModel>>(inscripciones);
-        return View(inscripcionViewModels);
-    }
+        InscripcionID = i.InscripcionID,
+        EstudianteID = i.EstudianteID,
+        EstudianteNombre = i.Estudiante.Nombre,
+        MateriaID = i.MateriaID,
+        MateriaNombre = i.Materia.Nombre,
+        ProfesorID = i.ProfesorID,
+        ProfesorNombre = i.Profesor.Nombre,
+        DecanoID = i.DecanoID,
+        DecanoNombre = i.Decano.Nombre,
+        UniversidadID = i.UniversidadID,
+        UniversidadNombre = i.Universidad.Nombre,
+        CarreraID = i.CarreraID,
+        CarreraNombre = i.Carrera.Nombre,
+        Semestre = i.Semestre,
+        Año = i.Año,
+        EstadoDeInscripcion = i.EstadoDeInscripcion
+    }).ToList();
+
+    return View(inscripcionViewModels);
+}
+
 
     public async Task<IActionResult> Create()
     {

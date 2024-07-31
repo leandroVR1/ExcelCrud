@@ -5,32 +5,38 @@
     <form asp-action="Create" method="post" class="mt-3">
         <div class="form-group">
             <label asp-for="EstudianteID" class="control-label"></label>
-            <select asp-for="EstudianteID" class="form-control" asp-items="@(new SelectList(Model.Estudiantes, "EstudianteID", "Nombre"))"></select>
+            <select asp-for="EstudianteID" class="form-control"
+                asp-items="@(new SelectList(Model.Estudiantes, "EstudianteID", "Nombre"))"></select>
             <span asp-validation-for="EstudianteID" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="MateriaID" class="control-label"></label>
-            <select asp-for="MateriaID" class="form-control" asp-items="@(new SelectList(Model.Materias, "MateriaID", "Nombre"))"></select>
+            <select asp-for="MateriaID" class="form-control"
+                asp-items="@(new SelectList(Model.Materias, "MateriaID", "Nombre"))"></select>
             <span asp-validation-for="MateriaID" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="ProfesorID" class="control-label"></label>
-            <select asp-for="ProfesorID" class="form-control" asp-items="@(new SelectList(Model.Profesores, "ProfesorID", "Nombre"))"></select>
+            <select asp-for="ProfesorID" class="form-control"
+                asp-items="@(new SelectList(Model.Profesores, "ProfesorID", "Nombre"))"></select>
             <span asp-validation-for="ProfesorID" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="DecanoID" class="control-label"></label>
-            <select asp-for="DecanoID" class="form-control" asp-items="@(new SelectList(Model.Decanos, "DecanoID", "Nombre"))"></select>
+            <select asp-for="DecanoID" class="form-control"
+                asp-items="@(new SelectList(Model.Decanos, "DecanoID", "Nombre"))"></select>
             <span asp-validation-for="DecanoID" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="UniversidadID" class="control-label"></label>
-            <select asp-for="UniversidadID" class="form-control" asp-items="@(new SelectList(Model.Universidades, "UniversidadID", "Nombre"))"></select>
+            <select asp-for="UniversidadID" class="form-control"
+                asp-items="@(new SelectList(Model.Universidades, "UniversidadID", "Nombre"))"></select>
             <span asp-validation-for="UniversidadID" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="CarreraID" class="control-label"></label>
-            <select asp-for="CarreraID" class="form-control" asp-items="@(new SelectList(Model.Carreras, "CarreraID", "Nombre"))"></select>
+            <select asp-for="CarreraID" class="form-control"
+                asp-items="@(new SelectList(Model.Carreras, "CarreraID", "Nombre"))"></select>
             <span asp-validation-for="CarreraID" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -45,14 +51,13 @@
         </div>
         <div class="form-group">
             <label asp-for="EstadoDeInscripcion" class="control-label"></label>
-            <select asp-for="EstadoDeInscripcion" class="form-control" />
-            <option value="Inscrito">Inscrito</option>
-            <option value="Inactivo">Inactivo</option>
+            <select asp-for="EstadoDeInscripcion" class="form-control">
+                <option value="Inscrito">Inscrito</option>
+                <option value="Inactivo">Inactivo</option>
             </select>
             <span asp-validation-for="EstadoDeInscripcion" class="text-danger"></span>
-            
-            
         </div>
+
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
     </form>

@@ -7,11 +7,17 @@ namespace ExcelCrudMVC.ViewModels
     {
         public int InscripcionID { get; set; }
         public int EstudianteID { get; set; }
+        public string EstudianteNombre { get; set; }
         public int MateriaID { get; set; }
+        public string MateriaNombre { get; set; }
         public int ProfesorID { get; set; }
+        public string ProfesorNombre { get; set; }
         public int DecanoID { get; set; }
+        public string DecanoNombre { get; set; }
         public int UniversidadID { get; set; }
+        public string UniversidadNombre { get; set; }
         public int CarreraID { get; set; }
+        public string CarreraNombre { get; set; }
         public int Semestre { get; set; }
         public int Año { get; set; }
         public string EstadoDeInscripcion { get; set; }

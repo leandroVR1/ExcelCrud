@@ -29,6 +29,7 @@ public class ExportController : Controller
 
         using (var package = new ExcelPackage())
         {
+            //Se agrega una nueva hoja de trabajo al paquete con el nombre "Inscripciones".
             var worksheet = package.Workbook.Worksheets.Add("Inscripciones");
 
             // Encabezados
@@ -49,7 +50,7 @@ public class ExportController : Controller
                 worksheet.Cells[1, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
             }
 
-            // Datos
+            // Itera sobre la lista de inscripciones y rellena la hoja de trabajo con datos
             for (int i = 0; i < inscripciones.Count; i++)
             {
                 var inscripcion = inscripciones[i];
@@ -81,6 +82,8 @@ public class ExportController : Controller
             // Ajusta el tamaño de las columnas automáticamente
             worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
 
+
+            //Guardar y Devolver el Archivo de Excel
             var stream = new MemoryStream();
             package.SaveAs(stream);
 
